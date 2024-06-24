@@ -1,0 +1,55 @@
+<div class="commentContainer">
+  <%if(locals.user){%>
+  <form action="/blog/comments/<%=blog._id%>" method="post">
+    <img
+      src="<%- locals.user.profileImageURL %>"
+      alt="profile"
+      class="mr-5 rounded-circle"
+      style="width: 30px; height: 30px"
+    />
+    <input
+      type="text"
+      name="content"
+      placeholder="Enter your comment"
+      class="commentContaintInput"
+      id=""
+      required
+    />
+    <!-- <textarea name="content" placeholder="Enter Comment" class="commentContaintInput" id="comment"></textarea> -->
+    <input type="submit" class="btn btn-primary m-2" value="Comment" />
+  </form>
+  <%}else { %>
+  <img
+    src="/pic/defult.jpg"
+    alt="profile"
+    class="mr-5 rounded-circle"
+    style="width: 30px; height: 30px"
+  />
+  <input
+    type="text"
+    placeholder="Login for comment"
+    class="commentContaintInput"
+    id=""
+  />
+  <!-- <textarea name="content" placeholder="Enter Comment" class="commentContaintInput" id="comment"></textarea> -->
+  <a href="/user/signin" class="btn btn-primary m-2 p-2">LogIn</a>
+
+  <%}%>
+</div>
+
+<div class="allcommentContainer">
+  <h5 class="m-1">Comments :</h5>
+
+  <% comment.forEach(comment => {%>
+  <div class="perComment">
+    <img
+      src="<%-comment.commentBy.profileImageURL%>"
+      alt="profile"
+      class="mr-5 rounded-circle"
+      style="width: 30px; height: 30px"
+    />
+    <span><%-comment.commentBy.fullname%></span>
+    <p><%-comment.content%></p>
+  </div>
+  <%}); %>
+</div>

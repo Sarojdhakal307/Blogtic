@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head') -%>
+<!-- <link rel="stylesheet" href="/style/nav.css"> -->
+<title>Signup</title>
+</head>
+<body>
+    
+<%- include('./partials/nav') -%>
+<div class="formContainer">
+<form action="/user/signup" method="post">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Full-Name</label>
+      <input type="text" class="form-control" name="fullname" id="exampleInputName" aria-describedby="emailHelp" required>
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control password" name="password" id="exampleInputPassword1" required>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="passwordShow">
+      <label class="form-check-label" for="exampleCheck1">show Password</label>
+    </div>
+    <button type="submit" class="btn submit btn-primary">Submit</button>
+    <p class="help-block">if your have already an account then : <a  href="/user/signin">Login</a> </p>
+
+  </form>
+  
+</div>
+    <%- include('./partials/script') -%>
+    <!-- <script src="/script/nav.js"></script> -->
+</body>
+</html>

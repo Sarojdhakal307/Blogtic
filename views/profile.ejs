@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head') -%>
+<!-- <link rel="stylesheet" href="/style/nav.css"> -->
+<title><%=user.full_name %></title>
+</head>
+<body>
+    
+<%- include('./partials/nav') -%>
+<%=console.log("user : " + locals.user) -%>
+
+<% if(locals.user){%>
+
+
+<div class="container mt-3   allblogContainer">
+    <% allblogs.forEach(blog => {%>
+
+          <div class="card   cardContainer" style="width: 600;">
+            <img src="<%= blog.coverImageURL%>" class="card-img-top card-pic" alt="...">
+            <div class="card-body">
+              <h4 class="card-title"><%= `${blog.title}`%></h4>
+              <div>
+                <span class="m-1" >
+                    <img src="<%- blog.createdBy.profileImageURL %>" alt="profile" class="rounded-circle" style="width: 30px; height: 30px;">
+                </span>
+                <%- blog.createdBy.fullname %>
+            </div> 
+              <p class="card-text dateContainer"><%= `${blog.createdAt}`%></p>
+              <p class="card-text cardBlockContent"><%= `${blog.content}`%></p>
+              <a href="/blog/<%=blog._id %>" class="btn btn-primary">View</a>
+            </div>
+          </div>
+    <% })%>
+</div>
+
+
+<% } else { %>
+
+    <%- include('./partials/signin') -%>
+<% } %>
+
+
+    <%- include('./partials/script') -%>
+    <!-- <script src="/script/nav.js"></script> -->
+</body>
+</html>

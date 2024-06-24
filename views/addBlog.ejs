@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head') -%>
+<!-- <link rel="stylesheet" href="/style/nav.css"> -->
+<title>AddBlog</title>
+</head>
+<body>
+    
+<%- include('./partials/nav') -%>
+<% if(locals.user){ %>
+    <div class="addBolgForm">
+        <form action="/blog/addBlog" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> Title :</label>
+              <input type="text" class="form-control" name="title" id="exampleInputtext1" aria-describedby="textHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"> Title :</label>
+                <input type="file"  accept="image/jpg, image/jpeg, image/png" class="form-control" name="coverImage" id="exampleInputtext1" aria-describedby="textHelp" required>
+              </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"> Contant :</label>
+                <textarea class="form-control"  name="content" id="floatingTextarea2" style="height: 200px" required></textarea>
+              </div>
+            
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+<% } else { %>
+    <%- include('./partials/signin') -%>
+<% } %>
+
+
+    <%- include('./partials/script') -%>
+    <!-- <script src="/script/nav.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include('./partials/head') -%>
+<!-- <link rel="stylesheet" href="/style/nav.css"> -->
+<title>Signup</title>
+</head>
+<body>
+    
+<%- include('./partials/nav') -%>
+<div class="blogPageAll">
+<div class="bodyBlog">
+<div class="blogPageContainer m-4">
+    <div class="titlecontainer">
+        <h2><%- blog.title %></h2>
+    </div>
+    <div class="nameContainer">
+        <div>
+            <span class="m-1" >
+                <img src="<%- blog.createdBy.profileImageURL %>" alt="profile" class="rounded-circle" style="width: 30px; height: 30px;">
+            </span>
+            <%- blog.createdBy.fullname %>
+        </div> 
+       <div><%- blog.createdAt %> </div>    
+    </div>
+    
+    <div class="imageContainer mx-auto">
+        <img src="<%- blog.coverImageURL%>" class="m-3 mx-auto">
+    </div>
+    <div class="contentContainer">
+        <p class="pre-wrap"><%- blog.content %></p>
+</div>
+</div>
+<%- include('./partials/comment') -%>
+</div>
+    <%- include('./partials/script') -%>
+    <!-- <script src="/script/nav.js"></script> -->
+</body>
+</html>
