@@ -1,0 +1,180 @@
+    body
+    {
+        background-color: hsl(220, 3%, 23%);
+        color: rgb(18, 13, 8);
+        
+    }
+    body p1{
+        margin: 10px;
+        background-color: rgb(91, 91, 91);
+        overflow-x: scroll;
+        scrollbar-color:  rgb(38, 39, 38) rgb(108, 101, 101);
+    }
+    .formContainer {
+        background-color: #232121a3;
+        color: aliceblue;
+        font-weight: 500;
+        margin: 0 auto;
+        width: 50%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin-top: 50px;
+        max-width: 500px;
+    }
+    .addBolgForm{
+        background-color: #565555a3;
+        color: rgb(247, 247, 247);
+        font-weight: 500;
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        margin-top: 50px;
+        
+    }
+    .cardBlockContent{
+        height: 100px;
+        overflow: hidden;
+        border-radius: 20px;
+        padding: 5px;
+ 
+    }
+    .cardContainer{
+        margin: 10px;
+        padding: 5px;
+        border-radius: 20px;
+        background-color: #474b50e9;
+    }
+    .allblogContainer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 850px;
+        border-radius: 30px;
+        background-color: hsl(220, 3%, 23%);
+
+    }
+    .form-image{
+        border-radius: 10px;
+    }
+    .card-pic{
+        border-radius: 20px;
+        height: 200px;
+        width: 150;
+        width: 300px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        z-index: 1000;
+        margin: 0 auto;
+    }
+    .bodyBlog{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+    }
+    .pre-wrap{
+        white-space: pre-wrap;
+    }
+    .blogPageContainer{
+        background-color: #5e5e5ea3;
+        color: rgb(104, 99, 99);
+        font-weight: 500;
+        /* margin: 0 auto; */
+        max-width: 800px;
+        padding: 20px;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+   
+    }
+    .nameContainer{
+        font-weight: 400;
+        font-size: 12px;
+        color: rgb(52, 51, 51);
+        display: flex;
+        flex-direction: column;
+    }
+    .dateContainer{
+        font-weight: 200;
+        font-size: 12px;
+        color: rgb(52, 51, 51);
+    }
+    .titlecontainer{
+        font-weight: 600;
+        font-size: 24px;
+        color: #000000;
+    }
+    
+    .contentContainer p{
+        font-weight: 400;
+        font-size: 16px;
+        color: rgb(37, 32, 32);
+        
+    }
+    .commentContainer{
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+        padding-bottom: 20px;
+    }
+    .commentContaintInput{
+        height: 50px;
+        /* border-radius: 10px; */
+        font-weight: 500;
+        border: none;
+        background-color: #3c3b3b8a;
+        width: 500px;
+        padding: 5px;
+        border-bottom: 1.5px solid #000000;
+        color: #868686;
+        font-weight: 400;
+    }
+    .commentContaintInput:focus{
+        outline: none;
+        background-color: #3c3b3b8a;
+    }
+    .allcommentContainer{
+        display: flex;
+        flex-direction: column;
+        width: 650px;
+        /* overflow: hidden; */
+        margin-left: 20px;
+        padding-bottom: 5px;
+        margin-bottom: 20px;
+    }
+    .perComment{
+        max-width: 600px;
+        margin: 2px;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #4d4a4a8a;
+    }
+    .perComment img{
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+    .perComment p{
+        padding-left: 40px;
+    }
+    .perComment span{
+        font-weight: 450;
+    }
+    .btn{
+        background-color: #0000008a;
+        border: none;
+    }
+    .btn:hover{
+        background-color: #000000;
+        scale: 1.1;
+        border: none;
+        transition: all 0.5s;
+    }
+    .help-block{
+        font-weight: 400;
+        padding: 10px;
+    }

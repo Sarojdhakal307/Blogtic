@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const PORT = 1234;
+const PORT = process.env.PORT ;
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb://localhost:27017/blog")
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"));
 const cookieParser = require("cookie-parser");
 
