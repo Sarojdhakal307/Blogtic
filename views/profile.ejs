@@ -3,21 +3,14 @@
 <head>
 <%- include('./partials/head') -%>
 <link rel="icon" type="image/png" href="./pic/blogtic.png">
-
-<!-- <link rel="stylesheet" href="/style/nav.css"> -->
 <title><%=user.full_name %></title>
 </head>
 <body>
-    
 <%- include('./partials/nav') -%>
 <%=console.log("user : " + locals.user) -%>
-
 <% if(locals.user){%>
-
-
 <div class="container mt-3   allblogContainer">
     <% allblogs.forEach(blog => {%>
-
           <div class="card   cardContainer" style="width: 600;">
             <img src="<%= blog.coverImageURL%>" class="card-img-top card-pic" alt="...">
             <div class="card-body">
@@ -35,15 +28,9 @@
           </div>
     <% })%>
 </div>
-
-
 <% } else { %>
-
     <%- include('./partials/signin') -%>
 <% } %>
-
-
     <%- include('./partials/script') -%>
-    <!-- <script src="/script/nav.js"></script> -->
 </body>
 </html>
