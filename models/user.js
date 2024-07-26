@@ -41,13 +41,10 @@ userSchema.pre('save', function(next){
     const hashedPassword = createHmac('sha256',salt)
                             .update(user.password)
                             .digest('hex');
-
     this.salt = salt;
     this.password = hashedPassword;
-
     next();
 });
-
 userSchema.static('matchPasswordAndGeneratedToken', async function(email ,password){
     console.log('email', email);
     const user = await this.findOne({ email});

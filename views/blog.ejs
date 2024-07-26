@@ -16,7 +16,8 @@
             <span class="m-1" >
                 <img src="<%- blog.createdBy.profileImageURL %>" alt="profile" class="rounded-circle" style="width: 30px; height: 30px;">
             </span>
-            <%- blog.createdBy.fullname %>
+            <a href="/user/profile/<%-blog.createdBy._id%>" class="blogWriterName"><%- blog.createdBy.fullname %></a>
+
         </div> 
        <div><%- blog.createdAt %> </div>    
     </div>
@@ -30,6 +31,8 @@
 </div>
 <%- include('./partials/comment') -%>
 </div>
+<%- include('./partials/footer') -%>
+
     <%- include('./partials/script') -%>
 </body>
 </html>

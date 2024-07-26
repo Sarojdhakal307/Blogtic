@@ -1,16 +1,19 @@
 require("dotenv").config();
 
 const express = require("express");
+// import express from "express";
 const app = express();
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL || "mongodb://localhost:27017/blog" )
   .then(() => console.log("Connected to MongoDB"));
 const cookieParser = require("cookie-parser");
 
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog");
+
+
 const User = require("./models/user");
 const Blog = require("./models/blog");
 
@@ -30,14 +33,23 @@ app.get("/", async (req, res) => {
   const allblogs = await Blog.find()
     .sort({ createdAt: -1 })
     .populate("createdBy");
+//     if(req.user){
+//       console.log(typeof req.user._id);
+//       const user = await User.findOne({_id: req.user._id});
+// res.json(user);
+//     }
   res.render("home", {
     user: req.user,
     allblogs: allblogs,
   });
+  
 });
 
 app.use("/user", userRouter);
 app.use("/blog", blogRouter);
+
+
+
 
 app.listen(PORT, () => {
   console.log("Surver is started at Port : " + PORT);

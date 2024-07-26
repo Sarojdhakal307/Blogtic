@@ -21,4 +21,11 @@ function checkforauthCookies(){
     }
 }
 
+function restrectedroutes(req,res,next){
+
+
+
+    
+}
+
 module.exports = {checkforauthCookies };

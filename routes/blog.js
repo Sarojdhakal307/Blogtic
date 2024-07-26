@@ -67,6 +67,25 @@ router.get('/:id', async (req, res) => {
     comment : comment,
   }); 
 });
+//search blog
+router.get('/search/:search', async (req, res) => {
+  const {searchName} = req.params.search;
+  const allBlogs = await blog.find({title:{$regex: `^${searchName}`, $options:`i`}}).sort({ 'createdAt': -1 }).populate('createdBy');
+  // const allblogs = await Blog.find({ createdBy: req.params.id}).sort({'createdAt': -1});   
+res.render('home',{
+  // user: req.user,
+  allblogs: allBlogs
+});
+});
+
+
+// router.get('/edit/:id', async (req, res) => {
+//     const blog = await Blog.findById(req.params.id);
+//     console.log('Blog:', blog);
+//     res.render('editBlog', {
+//         blog: blog
+//     });
+// });
 
 
 
