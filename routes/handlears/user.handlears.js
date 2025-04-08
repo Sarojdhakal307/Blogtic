@@ -9,8 +9,8 @@ const {createTokenForUser} = require("../../services/auth")
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "sarojdhakal307@gmail.com",
-    pass: "sggt tsqe jzsb sawj",
+    user: "youremail@gmail.com",
+    pass: "mailPasskey form nodemailer", //search for passkey
   },
 });
 
